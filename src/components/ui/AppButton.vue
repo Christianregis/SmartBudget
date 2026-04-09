@@ -1,9 +1,9 @@
 <template>
   <button
     :class="['btn', `btn-${variant}`, { 'btn-sm': size === 'sm', 'btn-lg': size === 'lg' }]"
-    :disabled="disabled"
     @click="$emit('click')"
   >
+  <!-- Permet d'avoir un contenu personnalisé dans le bouton -->
     <slot />
   </button>
 </template>
@@ -14,12 +14,10 @@ withDefaults(
   defineProps<{
     variant?: 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info'
     size?: 'sm' | 'md' | 'lg'
-    disabled?: boolean
   }>(),
   {
     variant: 'primary',
     size: 'md',
-    disabled: false,
   }
 )
 

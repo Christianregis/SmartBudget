@@ -37,7 +37,7 @@
 
     <footer class="footer mt-5 py-3 bg-light border-top">
       <div class="container-fluid text-center text-muted">
-        <small>&copy; 2024 SmartBudget - Gestionnaire de Budget Personnel</small>
+        <small>&copy; 2026 SmartBudget - Gestionnaire de Budget Personnel</small>
       </div>
     </footer>
   </div>

@@ -30,9 +30,9 @@ export const useBudgetStore = defineStore('budget', () => {
   const addTransaction = (title: string, amount: number, type: 'income' | 'expense') => {
     const transaction: Transaction = {
       id: Date.now().toString(),
-      title,
-      amount,
-      type,
+      title: title,
+      amount: amount,
+      type: type,
       // Le resultat cette operation peut renvoyer une chaine vide ( D'ou l'utilisation de || '' pour garantir que date soit toujours une string )
       date: new Date().toISOString().split('T')[0] || '' // Format YYYY-MM-DD
     }

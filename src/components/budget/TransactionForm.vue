@@ -35,7 +35,7 @@
       </div>
 
       <div class="d-grid">
-        <AppButton type="submit" variant="primary">
+        <AppButton type="submit" :variant="'primary'">
           Ajouter
         </AppButton>
       </div>

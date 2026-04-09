@@ -13,7 +13,6 @@
       <button
         class="btn btn-sm btn-outline-danger"
         @click="$emit('delete', transaction.id)"
-        title="Supprimer"
       >
         ✕
       </button>

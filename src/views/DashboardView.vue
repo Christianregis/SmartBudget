@@ -20,7 +20,7 @@
       <div class="col-12">
         <TransactionList
           :transactions="budgetStore.recentTransactions"
-          :filter="'all'"
+          filter="all"
           @delete="budgetStore.deleteTransaction"
         />
       </div>
