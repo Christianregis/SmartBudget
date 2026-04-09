@@ -10,9 +10,7 @@
         v-model="selectedFilter"
         @change="emitFilter"
       />
-      <label class="btn btn-outline-primary" for="all">
-        Toutes
-      </label>
+      <label class="btn btn-outline-primary" for="all"> Toutes </label>
 
       <input
         type="radio"
@@ -23,9 +21,7 @@
         v-model="selectedFilter"
         @change="emitFilter"
       />
-      <label class="btn btn-outline-success" for="income">
-        Revenus
-      </label>
+      <label class="btn btn-outline-success" for="income"> Revenus </label>
 
       <input
         type="radio"
@@ -36,27 +32,25 @@
         v-model="selectedFilter"
         @change="emitFilter"
       />
-      <label class="btn btn-outline-danger" for="expense">
-        Dépenses
-      </label>
+      <label class="btn btn-outline-danger" for="expense"> Dépenses </label>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-type FilterType = 'all' | 'income' | 'expense'
+type FilterType = "all" | "income" | "expense";
 
-const selectedFilter = ref<FilterType>('all')
+const selectedFilter = ref<FilterType>("all");
 
 const emit = defineEmits<{
-  filter: [type: FilterType]
-}>()
+  filter: [type: FilterType];
+}>();
 
 const emitFilter = () => {
-  emit('filter', selectedFilter.value)
-}
+  emit("filter", selectedFilter.value);
+};
 </script>
 
 <style scoped>

@@ -1,7 +1,6 @@
 <template>
   <button
     :class="['btn', `btn-${variant}`, { 'btn-sm': size === 'sm', 'btn-lg': size === 'lg' }]"
-    @click="$emit('click')"
   >
   <!-- Permet d'avoir un contenu personnalisé dans le bouton -->
     <slot />
@@ -20,10 +19,6 @@ withDefaults(
     size: 'md',
   }
 )
-
-defineEmits<{
-  click: []
-}>()
 </script>
 
 <style scoped>

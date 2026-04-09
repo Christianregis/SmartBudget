@@ -23,17 +23,17 @@
         <!-- Statistics -->
         <div class="row mt-4">
           <div class="col-md-6 mb-3">
-            <div class="stat-card bg-success bg-opacity-10 p-3 rounded">
-              <small class="text-muted">Total des revenus</small>
-              <p class="text-success fw-bold fs-5 mb-0">
+            <div class="stat-card bg-success p-3 rounded">
+              <small class="text-white">Total des revenus</small>
+              <p class="text-white fw-bold fs-5 mb-0">
                 {{ formatCurrency(budgetStore.totalIncome) }}
               </p>
             </div>
           </div>
           <div class="col-md-6 mb-3">
-            <div class="stat-card bg-danger bg-opacity-10 p-3 rounded">
-              <small class="text-muted">Total des dépenses</small>
-              <p class="text-danger fw-bold fs-5 mb-0">
+            <div class="stat-card bg-danger p-3 rounded">
+              <small class="text-white">Total des dépenses</small>
+              <p class="text-white fw-bold fs-5 mb-0">
                 {{ formatCurrency(budgetStore.totalExpense) }}
               </p>
             </div>
