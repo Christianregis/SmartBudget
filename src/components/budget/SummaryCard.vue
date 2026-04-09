@@ -18,7 +18,6 @@ import { formatCurrency } from "@/utils/formatCurrency";
 interface Props {
   label: string;
   value: number;
-  type?: "balance" | "income" | "expense";
 }
 
 const props = defineProps<Props>()

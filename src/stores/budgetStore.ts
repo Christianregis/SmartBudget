@@ -33,7 +33,8 @@ export const useBudgetStore = defineStore('budget', () => {
       title,
       amount,
       type,
-      date: new Date().toISOString().split('T')[0],
+      // Le resultat cette operation peut renvoyer une chaine vide ( D'ou l'utilisation de || '' pour garantir que date soit toujours une string )
+      date: new Date().toISOString().split('T')[0] || '' // Format YYYY-MM-DD
     }
     // Ajouter la transaction à la liste ( en utilisant les ... appellee operateur spread (pour Etaler) pour creer une nouvelle array avec les elements existants et le nouvel element )
     transactions.value = [...transactions.value, transaction]

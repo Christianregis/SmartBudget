@@ -36,11 +36,11 @@ defineEmits<{
 
 
 const amountClass = computed(() => {
-  return props.transaction.type == 'income' ? 'text-success' : 'text-danger'
+  return props.transaction.type === 'income' ? 'text-success' : 'text-danger'
 })
 
 const operator = computed(() => {
-  return props.transaction.type == 'income' ? '+' : '-'
+  return props.transaction.type === 'income' ? '+' : '-'
 })
 </script>
 

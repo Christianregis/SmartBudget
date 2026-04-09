@@ -20,8 +20,7 @@
           v-model.number="formData.amount"
           type="number"
           class="form-control"
-          placeholder="0.00"
-          step="0.01"
+          placeholder="100"
           min="0"
           required
         />

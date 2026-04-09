@@ -5,13 +5,13 @@
     <!-- Summary Cards -->
     <div class="row mb-5">
       <div class="col-md-4 mb-3">
-        <SummaryCard label="Solde" :value="budgetStore.balance" type="balance" />
+        <SummaryCard label="Solde" :value="budgetStore.balance" />
       </div>
       <div class="col-md-4 mb-3">
-        <SummaryCard label="Revenus" :value="budgetStore.totalIncome" type="income" />
+        <SummaryCard label="Revenus" :value="budgetStore.totalIncome"  />
       </div>
       <div class="col-md-4 mb-3">
-        <SummaryCard label="Dépenses" :value="budgetStore.totalExpense" type="expense" />
+        <SummaryCard label="Dépenses" :value="budgetStore.totalExpense" />
       </div>
     </div>
 
