@@ -9,7 +9,7 @@
         La page que vous recherchez n'existe pas ou a été déplacée.
       </p>
       <router-link to="/" class="btn btn-primary btn-lg">
-        🏠 Retour à l'accueil
+        Retour à l'accueil
       </router-link>
     </div>
   </div>

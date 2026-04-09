@@ -9,6 +9,7 @@
 </template>
 
 <script setup lang="ts">
+// Définir des valeurs par défaut (withDefaults) pour les props du composant AppButton, ce qui permet de simplifier l'utilisation du composant en évitant de devoir spécifier les props à chaque fois.
 withDefaults(
   defineProps<{
     variant?: 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info'

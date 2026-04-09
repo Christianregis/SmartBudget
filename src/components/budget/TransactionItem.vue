@@ -8,7 +8,7 @@
     </div>
     <div class="transaction-amount-section">
       <p class="transaction-amount" :class="amountClass">
-        {{ sign }}{{ formatCurrency(transaction.amount) }}
+        {{ operator }}{{ formatCurrency(transaction.amount) }}
       </p>
       <button
         class="btn btn-sm btn-outline-danger"
@@ -36,11 +36,11 @@ defineEmits<{
 
 
 const amountClass = computed(() => {
-  return props.transaction.type === 'income' ? 'text-success' : 'text-danger'
+  return props.transaction.type == 'income' ? 'text-success' : 'text-danger'
 })
 
-const sign = computed(() => {
-  return props.transaction.type === 'income' ? '+' : '-'
+const operator = computed(() => {
+  return props.transaction.type == 'income' ? '+' : '-'
 })
 </script>
 

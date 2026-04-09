@@ -5,25 +5,13 @@
     <!-- Summary Cards -->
     <div class="row mb-5">
       <div class="col-md-4 mb-3">
-        <SummaryCard
-          label="Solde"
-          :value="budgetStore.balance"
-          type="balance"
-        />
+        <SummaryCard label="Solde" :value="budgetStore.balance" type="balance" />
       </div>
       <div class="col-md-4 mb-3">
-        <SummaryCard
-          label="Revenus"
-          :value="budgetStore.totalIncome"
-          type="income"
-        />
+        <SummaryCard label="Revenus" :value="budgetStore.totalIncome" type="income" />
       </div>
       <div class="col-md-4 mb-3">
-        <SummaryCard
-          label="Dépenses"
-          :value="budgetStore.totalExpense"
-          type="expense"
-        />
+        <SummaryCard label="Dépenses" :value="budgetStore.totalExpense" type="expense" />
       </div>
     </div>
 
@@ -32,6 +20,7 @@
       <div class="col-12">
         <TransactionList
           :transactions="budgetStore.recentTransactions"
+          :filter="'all'"
           @delete="budgetStore.deleteTransaction"
         />
       </div>
@@ -42,7 +31,8 @@
       <div class="col-12">
         <div class="alert alert-info d-flex justify-content-between align-items-center">
           <div>
-            <strong>Conseil :</strong> Gérez vos transactions pour suivre votre budget en temps réel.
+            <strong>Conseil :</strong> Gérez vos transactions pour suivre votre budget en
+            temps réel.
           </div>
           <router-link to="/transactions" class="btn btn-sm btn-info">
             Aller aux transactions
@@ -54,16 +44,17 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import { useBudgetStore } from '@/stores/budgetStore'
-import SummaryCard from '@/components/budget/SummaryCard.vue'
-import TransactionList from '@/components/budget/TransactionList.vue'
+import { onMounted } from "vue";
+import { useBudgetStore } from "@/stores/budgetStore";
+import SummaryCard from "@/components/budget/SummaryCard.vue";
+import TransactionList from "@/components/budget/TransactionList.vue";
 
-const budgetStore = useBudgetStore()
+const budgetStore = useBudgetStore();
 
+// Charger les transactions au montage du composant ( Apres le le chargement du DOM )
 onMounted(() => {
-  budgetStore.loadTransactions()
-})
+  budgetStore.loadTransactions();
+});
 </script>
 
 <style scoped>

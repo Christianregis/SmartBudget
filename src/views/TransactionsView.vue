@@ -1,6 +1,6 @@
 <template>
   <div class="transactions-view">
-    <h1 class="mb-4">💳 Gestion des transactions</h1>
+    <h1 class="mb-4">Gestion des transactions</h1>
 
     <div class="row">
       <!-- Form Column -->
