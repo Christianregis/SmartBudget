@@ -65,7 +65,7 @@ const emit = defineEmits<{
 }>()
 
 const submitForm = () => {
-  if (formData.value.title && formData.value.amount > 0) {
+  if (formData.value.title != "" && formData.value.amount > 0) {
     emit('submit', { ...formData.value })
     formData.value = {
       title: '',
