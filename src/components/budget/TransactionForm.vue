@@ -17,7 +17,7 @@
         <label for="amount" class="form-label">Montant</label>
         <input
           id="amount"
-          v-model.number="formData.amount"
+          v-model="formData.amount"
           type="number"
           class="form-control"
           placeholder="100"

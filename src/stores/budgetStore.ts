@@ -13,18 +13,6 @@ export interface Transaction {
 export const useBudgetStore = defineStore('budget', () => {
   const transactions = ref<Transaction[]>([])
 
-  // Charger les données depuis localStorage au démarrage
-  const loadTransactions = () => {
-    const saved = localStorage.getItem('smartbudget_transactions')
-    if (saved) {
-      transactions.value = JSON.parse(saved)
-    }
-  }
-
-  // Sauvegarder les transactions dans localStorage
-  const saveTransactions = () => {
-    localStorage.setItem('smartbudget_transactions', JSON.stringify(transactions.value))
-  }
 
   // Ajouter une transaction
   const addTransaction = (title: string, amount: number, type: 'income' | 'expense') => {
@@ -38,13 +26,11 @@ export const useBudgetStore = defineStore('budget', () => {
     }
     // Ajouter la transaction à la liste ( en utilisant les ... appellee operateur spread (pour Etaler) pour creer une nouvelle array avec les elements existants et le nouvel element )
     transactions.value = [...transactions.value, transaction]
-    saveTransactions()
   }
 
   // Supprimer une transaction
   const deleteTransaction = (id: string) => {
     transactions.value = transactions.value.filter(t => t.id !== id)
-    saveTransactions()
   }
 
   // Calculs réactifs
@@ -73,10 +59,10 @@ export const useBudgetStore = defineStore('budget', () => {
     return transactions.value.slice(0, 5)
   })
 
+
+  
   return {
     transactions,
-    loadTransactions,
-    saveTransactions,
     addTransaction,
     deleteTransaction,
     totalIncome,
@@ -84,4 +70,6 @@ export const useBudgetStore = defineStore('budget', () => {
     balance,
     recentTransactions,
   }
+},{
+  persist: true
 })

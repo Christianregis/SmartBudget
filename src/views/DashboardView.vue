@@ -51,10 +51,10 @@ import TransactionList from "@/components/budget/TransactionList.vue";
 
 const budgetStore = useBudgetStore();
 
-// Charger les transactions au montage du composant ( Apres le le chargement du DOM )
-onMounted(() => {
-  budgetStore.loadTransactions();
-});
+// Charger les transactions au montage du composant ( Apres le le chargement du DOM ) : Puisque je charge les transactions dans le main.ts, je n'ai plus besoin de les charger ici, mais je laisse ce code commenté pour reference future
+// onMounted(() => {
+//   budgetStore.loadTransactions();
+// });
 </script>
 
 <style scoped>

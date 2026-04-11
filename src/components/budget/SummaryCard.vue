@@ -20,7 +20,14 @@ interface Props {
   value: number;
 }
 
-const props = defineProps<Props>()
+// Il s'agit d'un moyen d'ecriture evitant d'utiliser withDefaults, ( elle s'appelle la destrucuration ) NB: On peut aussi donner des valeurs par defaut par defaut a nos element en faisant nomeElement = valeurParDefaut
+const {
+  label='', value
+} = defineProps<Props>()
+
+console.log('label : ',label)
+console.log('value : ',value)
+
 
 </script>
 
