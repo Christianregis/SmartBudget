@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import { useBudgetStore } from "@/stores/budgetStore";
 import { formatCurrency } from "@/utils/formatCurrency";
 import TransactionForm from "@/components/budget/TransactionForm.vue";

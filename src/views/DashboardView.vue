@@ -44,7 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import { useBudgetStore } from "@/stores/budgetStore";
 import SummaryCard from "@/components/budget/SummaryCard.vue";
 import TransactionList from "@/components/budget/TransactionList.vue";

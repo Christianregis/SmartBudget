@@ -3,7 +3,9 @@
     <div class="transaction-info">
       <div class="transaction-details">
         <h6 class="transaction-title">{{ transaction.title }}</h6>
-        <small class="transaction-date text-muted">{{ formatDate(transaction.date) }}</small>
+        <small class="transaction-date text-muted">{{
+          formatDate(transaction.date)
+        }}</small>
       </div>
     </div>
     <div class="transaction-amount-section">
@@ -21,26 +23,25 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { formatCurrency, formatDate } from '@/utils/formatCurrency'
-import type { Transaction } from '@/stores/budgetStore'
+import { computed } from "vue";
+import { formatCurrency, formatDate } from "@/utils/formatCurrency";
+import type { Transaction } from "@/stores/budgetStore";
 
 const props = defineProps<{
-  transaction: Transaction
-}>()
+  transaction: Transaction;
+}>();
 
 defineEmits<{
-  delete: [id: string]
-}>()
-
+  delete: [id: string];
+}>();
 
 const amountClass = computed(() => {
-  return props.transaction.type === 'income' ? 'text-success' : 'text-danger'
-})
+  return props.transaction.type === "income" ? "text-success" : "text-danger";
+});
 
 const operator = computed(() => {
-  return props.transaction.type === 'income' ? '+' : '-'
-})
+  return props.transaction.type === "income" ? "+" : "-";
+});
 </script>
 
 <style scoped>
