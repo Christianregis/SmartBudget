@@ -54,13 +54,24 @@ export const useBudgetStore = defineStore('budget', () => {
     return totalIncome.value - totalExpense.value
   })
 
-  // Transactions récentes ( les 5 dernières )
+  // Transactions récentes ( les 5 dernières ) en comparant les identifiants (Qui represente la date d'ajout de la transaction (En nombre))
   const recentTransactions = computed(() => {
-    return transactions.value.slice(0, 5)
+    return transactions.value
+      .sort((a, b) => {
+        if (a.id < b.id) {
+          return 1
+        } else if (a.id > b.id) {
+          return -1
+        }
+        else {
+          return 0
+        }
+      })
+      .slice(0, 5)
   })
 
 
-  
+
   return {
     transactions,
     addTransaction,
@@ -70,6 +81,6 @@ export const useBudgetStore = defineStore('budget', () => {
     balance,
     recentTransactions,
   }
-},{
+}, {
   persist: true
 })

@@ -25,10 +25,6 @@ const {
   label='', value
 } = defineProps<Props>()
 
-console.log('label : ',label)
-console.log('value : ',value)
-
-
 </script>
 
 <style scoped>
